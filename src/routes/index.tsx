@@ -5,23 +5,27 @@ import {
     Switch
 } from 'react-router-dom'
 import routes from './routes'
+import { Gcontext, Gstate } from '../store'
 
 export default function Routes () {
     return (
-        <Router>
-            <Switch>
-                {
-                    routes.map(route => {
-                        return (
-                            <Route
-                                key={route.path}
-                                path={route.path}
-                                component={route.component}
-                            ></Route>
-                        )
-                    })
-                }
-            </Switch>
-        </Router>
+        <Gcontext.Provider value={Gstate}>
+            <Router>
+                <Switch>
+                    {
+                        routes.map(route => {
+                            return (
+                                <Route
+                                    key={route.path}
+                                    path={route.path}
+                                    render={() => <route.component />}
+                                    exact={!!route.exact}
+                                ></Route>
+                            )
+                        })
+                    }
+                </Switch>
+            </Router>
+        </Gcontext.Provider>
     )
 }

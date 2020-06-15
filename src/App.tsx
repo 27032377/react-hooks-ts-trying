@@ -1,26 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Routes from './routes'
+import { Gcontext, Greducer } from './store'
+import { Button } from 'antd-mobile'
 
 function App() {
+  const context = useContext(Gcontext)
+  console.log('context')
+  console.log(context)
+  const Loading = context.loading ? <img src={logo} className="App-logo" alt="logo" /> : null
+  const clickEv = () => {
+    // Greducer({
+    //   type: 'changeLoading'
+    // })
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <Routes />
+    <div>
+      {Loading}
+      <Button onClick={clickEv} type='primary'>change Loding</Button>
     </div>
   );
 }
