@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import {
     BrowserRouter as Router,
     Route,
     Switch
 } from 'react-router-dom'
 import routes from './routes'
-import { Gcontext, Gstate } from '../store'
+import { initialState, reducer, Gcontext } from '../store'
 
 export default function Routes () {
+    const [state, dispatch] = useReducer(reducer, initialState)
+    
     return (
-        <Gcontext.Provider value={Gstate}>
+        <Gcontext.Provider value={{ state, dispatch }}>
             <Router>
                 <Switch>
                     {
