@@ -6,9 +6,10 @@ import Routes from './routes'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Routes />
-  </React.StrictMode>,
+  // 解决 antd 组件版本报错
+  // <React.StrictMode>
+    <Routes />,
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 

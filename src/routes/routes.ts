@@ -1,8 +1,16 @@
 import Home from '../App'
 import My from '../views/My'
 import VideoView from '../views/VideoView'
+import News from '../views/News'
 
-export default [
+interface IRouter {
+    path: string,
+    component: any,
+    exact?: boolean,
+    meta?: object
+}
+
+const router: IRouter[] = [
     {
         path: '/',
         component: Home,
@@ -15,5 +23,11 @@ export default [
     {
         path: '/video/:id',
         component: VideoView
+    },
+    {
+        path: '/news',
+        component: News
     }
 ]
+
+export default router;
