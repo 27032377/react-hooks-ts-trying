@@ -1,7 +1,10 @@
-import Home from '../App'
-import My from '../views/My'
-import VideoView from '../views/VideoView'
-import News from '../views/News'
+import { lazy } from 'react'
+
+const Home = lazy(()=> import('../App'))
+const My = lazy(() => import('../views/My'))
+const VideoView = lazy(() => import('../views/VideoView'))
+const News = lazy(() => import('../views/News'))
+const Model = lazy(() => import('../views/Model'))
 
 interface IRouter {
     path: string,
@@ -27,6 +30,10 @@ const router: IRouter[] = [
     {
         path: '/news',
         component: News
+    },
+    {
+        path: '/model',
+        component: Model
     }
 ]
 

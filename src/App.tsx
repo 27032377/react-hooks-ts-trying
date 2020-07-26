@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import logo from './logo.svg'
+import logo from './assets/images/logo.svg'
 import './App.css'
 import { Gcontext } from './store'
 import { Button } from 'antd-mobile'
