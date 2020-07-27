@@ -1,0 +1,17 @@
+.img-box {
+    width: 100%;
+    height: 100%;
+    .img-position {
+        position: fixed;
+        width: 100px;
+        height: 100px;
+        left: 50%;
+        top: 50%;
+        border-radius: 10px;
+        background: rgba($color: #000000, $alpha: 0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-50%, -50%);
+    }
+}

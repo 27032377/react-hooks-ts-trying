@@ -1,10 +1,10 @@
 import { lazy } from 'react'
 
-const Home = lazy(()=> import('../App'))
-const My = lazy(() => import('../views/My'))
-const VideoView = lazy(() => import('../views/VideoView'))
-const News = lazy(() => import('../views/News'))
-const Model = lazy(() => import('../views/Model'))
+const Home = lazy(()=> import(/* webpackChunkName: 'Home' */'../App'))
+const My = lazy(() => import(/* webpackChunkName: 'My' */'../views/My'))
+const VideoView = lazy(() => import(/* webpackChunkName: 'VideoView' */'../views/VideoView'))
+const News = lazy(() => import(/* webpackChunkName: 'News' */'../views/News'))
+const Model = lazy(() => import(/* webpackChunkName: 'Model' */'../views/Model'))
 
 interface IRouter {
     path: string,

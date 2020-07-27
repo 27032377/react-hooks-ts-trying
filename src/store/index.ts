@@ -1,26 +1,18 @@
-import React from 'react'
+import { createStore } from 'redux';
+import reducers, {initialState} from './reducer';
+import { persistReducer, persistStore } from 'redux-persist';
+import storageSession from 'redux-persist/lib/storage/session'
 
-export const initialState = {
-    loading: false
+const config = {
+    key:  'react',
+    storage: storageSession
 }
 
-interface IAction {
-    type: string;
-    [propName: string]: any;
-}
+const perReducer = persistReducer(config, reducers);
+const store = createStore(perReducer, initialState);
 
-export function reducer(state: any, action: IAction) {
-    console.log(action)
-    switch (action.type) {
-        case 'changeLoading':
-            return {...state, loading: !state.loading}
-        default:
-            return {...state}
-    }
-}
+export const persistor = persistStore(store);
 
-interface IContext {
-    [prop: string]: any
-}
-const context: IContext = {}
-export const Gcontext = React.createContext(context)
+export default store;
+
+// export default createStore(reducers, initialState);
