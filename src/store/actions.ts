@@ -11,3 +11,10 @@ export function loading(bol: boolean): IPayload {
         loading: bol
     }
 }
+
+export function navList(list: string[]): IPayload {
+    return {
+        type: types.GET_NAV_LIST,
+        navList: list
+    }
+}

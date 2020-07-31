@@ -1,1 +1,2 @@
 export const CHANGE_LOADING = 'CHANGE_LOADING';
+export const GET_NAV_LIST = 'GET_NAV_LIST';

@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 import reducers, {initialState} from './reducer';
 import { persistReducer, persistStore } from 'redux-persist';
-import storageSession from 'redux-persist/lib/storage/session'
+import storageSession from 'redux-persist/lib/storage/session';
 
 const config = {
     key:  'react',
@@ -9,7 +9,10 @@ const config = {
 }
 
 const perReducer = persistReducer(config, reducers);
-const store = createStore(perReducer, initialState);
+const store = createStore(
+    perReducer,
+    initialState
+);
 
 export const persistor = persistStore(store);
 

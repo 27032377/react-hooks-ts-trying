@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './assets/images/logo.svg';
+// import logo from './assets/images/logo.svg';
 import './App.css';
 import { Button } from 'antd-mobile';
 import { useSelector, useDispatch } from 'react-redux';
@@ -11,7 +11,8 @@ function App() {
   console.log('loading')
   console.log(loading);
   const dispatch = useDispatch();
-  const Loading = loading ? <img src={logo} className="App-logo" alt="logo" /> : null;
+  // const Loading = loading ? <img src={logo} className="App-logo" alt="logo" /> : null;
+  const Loading = loading ? (<p>Loading</p>) : null;
   const clickEv = () => {
     dispatch(actions.loading(!loading));
   }

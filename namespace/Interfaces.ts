@@ -1,6 +1,7 @@
 namespace Interfaces {
     export interface IState {
-        loading: boolean
+        loading: boolean,
+        navList: string[]
     }
 }
 
